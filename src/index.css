@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Info Pantai Malang Selatan - Design System
+   Theme: Ocean, Beach, Nature
+   Colors inspired by: sea blue, sandy beach, tropical green
+*/
+
+@layer base {
+  :root {
+    /* Primary - Ocean Blue */
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Sandy Beach */
+    --secondary: 39 77% 83%;
+    --secondary-foreground: 30 50% 20%;
+    
+    /* Accent - Tropical Green */
+    --accent: 158 64% 52%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background & Surfaces */
+    --background: 200 20% 98%;
+    --foreground: 215 25% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+    
+    /* Muted colors */
+    --muted: 200 15% 94%;
+    --muted-foreground: 215 15% 45%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 199 89% 48%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Colors */
+    --ocean: 199 89% 48%;
+    --ocean-dark: 199 89% 38%;
+    --ocean-light: 199 89% 95%;
+    --sand: 39 77% 83%;
+    --sand-dark: 39 50% 60%;
+    --palm: 158 64% 42%;
+    --palm-light: 158 64% 90%;
+    --sunset: 25 95% 60%;
+    --coral: 16 85% 65%;
+    
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(185 80% 45%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(25 95% 60%) 0%, hsl(350 80% 55%) 100%);
+    --gradient-beach: linear-gradient(180deg, hsl(199 89% 95%) 0%, hsl(39 77% 95%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.1), 0 2px 4px -2px hsl(215 25% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.1), 0 4px 6px -4px hsl(215 25% 15% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 15% / 0.1), 0 8px 10px -6px hsl(215 25% 15% / 0.1);
+    --shadow-glow: 0 0 40px hsl(199 89% 48% / 0.3);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 15% 94%;
+    --sidebar-accent-foreground: 215 25% 15%;
+    --sidebar-border: 200 20% 88%;
+    --sidebar-ring: 199 89% 48%;
+  }
+
+  .dark {
+    /* Primary - Ocean Blue (brighter for dark mode) */
+    --primary: 199 89% 60%;
+    --primary-foreground: 215 25% 10%;
+    
+    /* Secondary */
+    --secondary: 39 40% 25%;
+    --secondary-foreground: 39 77% 90%;
+    
+    /* Accent */
+    --accent: 158 64% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Background & Surfaces */
+    --background: 215 30% 8%;
+    --foreground: 200 20% 95%;
+    
+    --card: 215 30% 12%;
+    --card-foreground: 200 20% 95%;
+    
+    --popover: 215 30% 12%;
+    --popover-foreground: 200 20% 95%;
+    
+    /* Muted colors */
+    --muted: 215 25% 18%;
+    --muted-foreground: 200 15% 60%;
+    
+    /* Destructive */
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 199 89% 60%;
+    
+    /* Custom Colors (adjusted for dark mode) */
+    --ocean: 199 89% 55%;
+    --ocean-dark: 199 89% 45%;
+    --ocean-light: 199 50% 20%;
+    --sand: 39 50% 40%;
+    --sand-dark: 39 40% 25%;
+    --palm: 158 64% 45%;
+    --palm-light: 158 30% 20%;
+    --sunset: 25 95% 55%;
+    --coral: 16 85% 60%;
+    
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(199 89% 45%) 0%, hsl(185 80% 40%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(25 95% 55%) 0%, hsl(350 80% 50%) 100%);
+    --gradient-beach: linear-gradient(180deg, hsl(215 30% 10%) 0%, hsl(215 30% 15%) 100%);
+    
+    /* Shadows (darker for dark mode) */
+    --shadow-glow: 0 0 40px hsl(199 89% 55% / 0.25);
+    
+    /* Sidebar */
+    --sidebar-background: 215 30% 10%;
+    --sidebar-foreground: 200 20% 90%;
+    --sidebar-primary: 199 89% 55%;
+    --sidebar-primary-foreground: 215 25% 10%;
+    --sidebar-accent: 215 25% 18%;
+    --sidebar-accent-foreground: 200 20% 95%;
+    --sidebar-border: 215 25% 20%;
+    --sidebar-ring: 199 89% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .gradient-beach {
+    background: var(--gradient-beach);
+  }
+  
+  .text-gradient-ocean {
+    background: var(--gradient-ocean);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+  
+  .glass-dark {
+    @apply bg-card/90 backdrop-blur-md border border-border/30;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-wave {
+    animation: wave 3s ease-in-out infinite;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-5px) rotate(-2deg); }
+  75% { transform: translateX(5px) rotate(2deg); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
